@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Store Admin | R&amp;B Fashion</title>
+    <link rel="icon" type="image/png" href="assets/rb-logo.png" />
+    <link rel="stylesheet" href="css/admin.css" />
+  </head>
+  <body>
+    <header class="admin-header">
+      <a class="admin-brand" href="index.html" aria-label="R&B Fashion home">
+        <img src="assets/rb-logo.png" alt="" />
+        <span>R&amp;B <small>STORE ADMIN</small></span>
+      </a>
+      <nav class="admin-nav" aria-label="Admin navigation">
+        <a href="#inventory">Products</a>
+        <a href="#orders">Orders</a>
+        <a href="index.html">Shop</a>
+        <button type="button" id="signOutButton">Sign out</button>
+      </nav>
+    </header>
+
+    <main class="admin-main">
+      <div class="admin-heading">
+        <div>
+          <p class="admin-eyebrow">Store management</p>
+          <h1>Products</h1>
+        </div>
+        <div class="admin-metrics" aria-label="Store summary">
+          <p class="admin-count">
+            <strong id="productCount">0</strong><span>active products</span>
+          </p>
+          <p class="admin-count">
+            <strong id="ordersCount">0 total</strong
+            ><span>customer orders</span>
+          </p>
+          <p class="admin-count">
+            <strong id="ordersRevenue">GH₵ 0</strong
+            ><span>confirmed revenue</span>
+          </p>
+        </div>
+      </div>
+
+      <p id="accessStatus" class="list-status" aria-live="polite"></p>
+
+      <section
+        class="admin-section"
+        id="inventory"
+        aria-labelledby="add-product-heading"
+      >
+        <div class="section-heading">
+          <h2 id="add-product-heading">Add or edit a product</h2>
+          <p>
+            Changes to active products are reflected in the storefront catalog.
+          </p>
+        </div>
+        <form id="productForm" class="product-form">
+          <label class="field field--wide"
+            >Product name
+            <input
+              name="name"
+              required
+              maxlength="200"
+              autocomplete="off"
+              placeholder="e.g. Relaxed linen shirt"
+            />
+          </label>
+          <label class="field"
+            >Product ID
+            <input
+              name="id"
+              required
+              pattern="[a-z0-9]+(-[a-z0-9]+)*"
+              maxlength="100"
+              autocomplete="off"
+              placeholder="relaxed-linen-shirt"
+            />
+          </label>
+          <label class="field"
+            >Category
+            <select name="category" required>
+              <option value="">Choose category</option>
+              <option>Denim</option>
+              <option>Streetwear</option>
+              <option>Sneakers</option>
+              <option>Boots</option>
+              <option>Layers</option>
+              <option>Formal</option>
+              <option>Accessories</option>
+            </select>
+          </label>
+          <label class="field"
+            >Price (GH₵)
+            <input name="price" type="number" min="0" step="1" required />
+          </label>
+          <label class="field"
+            >Stock quantity
+            <input name="stock" type="number" min="0" step="1" required />
+          </label>
+          <label class="field field--wide"
+            >Product image URL (optional)
+            <input
+              name="imageUrl"
+              type="text"
+              inputmode="url"
+              placeholder="https://example.com/product.jpg"
+            />
+          </label>
+          <label class="field field--wide"
+            >Upload image from your device
+            <input
+              name="imageFile"
+              type="file"
+              accept="image/jpeg,image/png,image/webp,image/gif"
+            />
+            <small id="imageUploadStatus" aria-live="polite"
+              >JPEG, PNG, WebP, or GIF. Maximum 700 KB.</small
+            >
+          </label>
+          <label class="field field--wide"
+            >Description
+            <textarea
+              name="description"
+              rows="3"
+              maxlength="2000"
+              placeholder="Optional product details"
+            ></textarea>
+          </label>
+          <div class="form-actions">
+            <p id="formStatus" class="form-status" aria-live="polite"></p>
+            <div class="form-buttons">
+              <button
+                class="refresh-button"
+                type="button"
+                id="cancelEdit"
+                hidden
+              >
+                Cancel edit
+              </button>
+              <button class="primary-button" type="submit" id="saveProduct">
+                Add product
+              </button>
+            </div>
+          </div>
+        </form>
+      </section>
+
+      <section class="admin-section" aria-labelledby="inventory-heading">
+        <div class="section-heading inventory-heading">
+          <div>
+            <h2 id="inventory-heading">Product inventory</h2>
+            <p>Archived products stay in past orders and can be restored.</p>
+          </div>
+          <button
+            type="button"
+            class="refresh-button"
+            id="refreshProducts"
+            aria-label="Refresh product list"
+            title="Refresh product list"
+          >
+            Refresh
+          </button>
+        </div>
+        <p id="listStatus" class="list-status" aria-live="polite"></p>
+        <div class="table-wrap">
+          <table class="product-table">
+            <thead>
+              <tr>
+                <th scope="col">Product</th>
+                <th scope="col">Category</th>
+                <th scope="col">Price</th>
+                <th scope="col">Stock</th>
+                <th scope="col">Visibility</th>
+                <th scope="col">
+                  <span class="visually-hidden">Actions</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody id="productRows"></tbody>
+          </table>
+        </div>
+        <p id="emptyState" class="empty-state" hidden>
+          No products in the inventory.
+        </p>
+      </section>
+
+      <section
+        class="admin-section"
+        id="orders"
+        aria-labelledby="orders-heading"
+      >
+        <div class="section-heading inventory-heading">
+          <div>
+            <h2 id="orders-heading">Customer orders</h2>
+            <p>
+              Verify payment to either Mobile Money number (0547042682 or
+              0598585080) before marking an order paid. WhatsApp support:
+              0598585080.
+            </p>
+          </div>
+          <button type="button" class="refresh-button" id="refreshOrders">
+            Refresh
+          </button>
+        </div>
+        <p id="ordersStatus" class="list-status" aria-live="polite"></p>
+        <div class="table-wrap">
+          <table class="order-table">
+            <thead>
+              <tr>
+                <th scope="col">Order</th>
+                <th scope="col">Customer / delivery</th>
+                <th scope="col">Items</th>
+                <th scope="col">Total</th>
+                <th scope="col">Payment reference</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody id="orderRows"></tbody>
+          </table>
+        </div>
+        <p id="ordersEmptyState" class="empty-state" hidden>
+          No customer orders yet.
+        </p>
+      </section>
+    </main>
+
+    <script src="js/admin.js"></script>
+  </body>
+</html>

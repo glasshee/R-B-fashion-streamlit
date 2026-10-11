@@ -1,0 +1,2025 @@
+// js/data/products.js
+
+const PRODUCTS = [
+  // ===== MEN'S T-SHIRTS =====
+  {
+    id: 'mt001',
+    name: 'Essential Crew Neck Tee',
+    category: 'T-Shirts',
+    gender: 'men',
+    price: 85,
+    originalPrice: null,
+    image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&h=800&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1622445275463-afa2ab738c34?w=600&h=800&fit=crop'
+    ],
+    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+    description: 'Premium cotton crew neck t-shirt with a relaxed fit. Perfect for everyday wear with clean lines and superior comfort.',
+    badge: null,
+    stock: 'in-stock',
+    isNew: false,
+    isTrending: false,
+    tags: ['basics', 'casual']
+  },
+  {
+    id: 'mt002',
+    name: 'Oversized Graphic Print Tee',
+    category: 'T-Shirts',
+    gender: 'men',
+    price: 120,
+    originalPrice: null,
+    image: 'https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=600&h=800&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=600&h=800&fit=crop'
+    ],
+    sizes: ['M', 'L', 'XL'],
+    description: 'Oversized fit graphic tee with contemporary print design. A streetwear essential for the modern wardrobe.',
+    badge: 'new',
+    stock: 'in-stock',
+    isNew: true,
+    isTrending: true,
+    tags: ['streetwear', 'graphic']
+  },
+  {
+    id: 'mt003',
+    name: 'Vintage Wash Pocket Tee',
+    category: 'T-Shirts',
+    gender: 'men',
+    price: 95,
+    originalPrice: 130,
+    image: 'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=600&h=800&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=600&h=800&fit=crop'
+    ],
+    sizes: ['S', 'M', 'L', 'XL'],
+    description: 'Vintage-washed tee with chest pocket detail. Soft hand feel with a lived-in aesthetic.',
+    badge: 'sale',
+    stock: 'in-stock',
+    isNew: false,
+    isTrending: false,
+    tags: ['vintage', 'casual']
+  },
+
+  // ===== MEN'S POLO SHIRTS =====
+  {
+    id: 'mp001',
+    name: 'Classic Polo Shirt',
+    category: 'Polo Shirts',
+    gender: 'men',
+    price: 150,
+    originalPrice: null,
+    image: 'https://images.unsplash.com/photo-1625910513413-5fc39dc20900?w=600&h=800&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1625910513413-5fc39dc20900?w=600&h=800&fit=crop'
+    ],
+    sizes: ['S', 'M', 'L', 'XL'],
+    description: 'Timeless polo shirt crafted from premium piqué cotton. Smart-casual versatility for any occasion.',
+    badge: null,
+    stock: 'in-stock',
+    isNew: false,
+    isTrending: true,
+    tags: ['smart-casual', 'classic']
+  },
+  {
+    id: 'mp002',
+    name: 'Contrast Collar Polo',
+    category: 'Polo Shirts',
+    gender: 'men',
+    price: 175,
+    originalPrice: null,
+    image: 'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=600&h=800&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=600&h=800&fit=crop'
+    ],
+    sizes: ['M', 'L', 'XL'],
+    description: 'Modern polo with contrast collar detail. Elevated basics for the discerning dresser.',
+    badge: 'new',
+    stock: 'in-stock',
+    isNew: true,
+    isTrending: false,
+    tags: ['smart-casual', 'modern']
+  },
+
+  // ===== MEN'S JEANS =====
+  {
+    id: 'mj001',
+    name: 'Slim Fit Dark Wash Jeans',
+    category: 'Jeans',
+    gender: 'men',
+    price: 220,
+    originalPrice: null,
+    image: 'https://images.unsplash.com/photo-1542272604-787c3835535d?w=600&h=800&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1542272604-787c3835535d?w=600&h=800&fit=crop'
+    ],
+    sizes: ['28', '30', '32', '34', '36'],
+    description: 'Premium dark wash denim with slim fit silhouette. Versatile enough for any setting.',
+    badge: null,
+    stock: 'in-stock',
+    isNew: false,
+    isTrending: true,
+    tags: ['denim', 'classic']
+  },
+  {
+    id: 'mj002',
+    name: 'Distressed Straight Leg Jeans',
+    category: 'Jeans',
+    gender: 'men',
+    price: 250,
+    originalPrice: 320,
+    image: 'https://images.unsplash.com/photo-1604176354204-9268737828e4?w=600&h=800&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1604176354204-9268737828e4?w=600&h=800&fit=crop'
+    ],
+    sizes: ['30', '32', '34'],
+    description: 'Statement distressed jeans with straight leg cut. Authentic worn-in details for street-ready style.',
+    badge: 'sale',
+    stock: 'low-stock',
+    isNew: false,
+    isTrending: true,
+    tags: ['streetwear', 'distressed']
+  },
+
+  // ===== MEN'S CARGO PANTS =====
+  {
+    id: 'mc001',
+    name: 'Tactical Cargo Pants',
+    category: 'Cargo Pants',
+    gender: 'men',
+    price: 280,
+    originalPrice: null,
+    image: 'https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=600&h=800&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=600&h=800&fit=crop'
+    ],
+    sizes: ['S', 'M', 'L', 'XL'],
+    description: 'Multi-pocket cargo pants with relaxed fit. Utility meets contemporary fashion.',
+    badge: 'new',
+    stock: 'in-stock',
+    isNew: true,
+    isTrending: true,
+    tags: ['streetwear', 'cargo']
+  },
+
+  // ===== MEN'S JOGGERS =====
+  {
+    id: 'mg001',
+    name: 'Premium Tech Joggers',
+    category: 'Joggers',
+    gender: 'men',
+    price: 180,
+    originalPrice: null,
+    image: 'https://images.unsplash.com/photo-1552902865-b72c031ac5ea?w=600&h=800&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1552902865-b72c031ac5ea?w=600&h=800&fit=crop'
+    ],
+    sizes: ['S', 'M', 'L', 'XL'],
+    description: 'Technical joggers with tapered fit and premium fabric. Comfort-focused design for active lifestyles.',
+    badge: null,
+    stock: 'in-stock',
+    isNew: false,
+    isTrending: false,
+    tags: ['athleisure', 'casual']
+  },
+
+  // ===== MEN'S SHIRTS =====
+  {
+    id: 'ms001',
+    name: 'Oxford Button-Down Shirt',
+    category: 'Shirts',
+    gender: 'men',
+    price: 200,
+    originalPrice: null,
+    image: 'https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=600&h=800&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=600&h=800&fit=crop'
+    ],
+    sizes: ['S', 'M', 'L', 'XL'],
+    description: 'Classic Oxford shirt with button-down collar. A wardrobe essential from campus to career.',
+    badge: null,
+    stock: 'in-stock',
+    isNew: false,
+    isTrending: false,
+    tags: ['formal', 'classic']
+  },
+
+  // ===== MEN'S FORMAL WEAR =====
+  {
+    id: 'mf001',
+    name: 'Slim Fit Blazer',
+    category: 'Formal Wear',
+    gender: 'men',
+    price: 450,
+    originalPrice: null,
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=800&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=800&fit=crop'
+    ],
+    sizes: ['S', 'M', 'L', 'XL'],
+    description: 'Tailored slim fit blazer with modern proportions. Elevate any outfit for presentations and formal events.',
+    badge: 'limited',
+    stock: 'low-stock',
+    isNew: false,
+    isTrending: true,
+    tags: ['formal', 'tailoring']
+  },
+
+  // ===== MEN'S SHOES =====
+  {
+    id: 'msh001',
+    name: 'Urban Runner Sneakers',
+    category: 'Sneakers',
+    gender: 'men',
+    price: 350,
+    originalPrice: null,
+    image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&h=800&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&h=800&fit=crop'
+    ],
+    sizes: ['40', '41', '42', '43', '44', '45'],
+    description: 'Lightweight urban sneakers with cushioned sole. Street-ready design for all-day comfort.',
+    badge: 'new',
+    stock: 'in-stock',
+    isNew: true,
+    isTrending: true,
+    tags: ['shoes', 'sneakers', 'streetwear'],
+    isShoe: true
+  },
+  {
+    id: 'msh002',
+    name: 'Classic Leather Derby Shoes',
+    category: 'Formal Shoes',
+    gender: 'men',
+    price: 420,
+    originalPrice: null,
+    image: 'https://images.unsplash.com/photo-1614252369475-531eba835eb1?w=600&h=800&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1614252369475-531eba835eb1?w=600&h=800&fit=crop'
+    ],
+    sizes: ['40', '41', '42', '43', '44'],
+    description: 'Genuine leather derby shoes with timeless design. Essential footwear for formal occasions.',
+    badge: null,
+    stock: 'in-stock',
+    isNew: false,
+    isTrending: false,
+    tags: ['shoes', 'formal'],
+    isShoe: true
+  },
+  {
+    id: 'msh003',
+    name: 'High-Top Canvas Sneakers',
+    category: 'Sneakers',
+    gender: 'men',
+    price: 280,
+    originalPrice: 350,
+    image: 'https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=600&h=800&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=600&h=800&fit=crop'
+    ],
+    sizes: ['41', '42', '43', '44'],
+    description: 'Retro-inspired high-top sneakers with premium canvas upper. A bold statement for everyday style.',
+    badge: 'sale',
+    stock: 'in-stock',
+    isNew: false,
+    isTrending: true,
+    tags: ['shoes', 'sneakers'],
+    isShoe: true
+  },
+  {
+    id: 'msh004',
+    name: 'Chelsea Boots',
+    category: 'Boots',
+    gender: 'men',
+    price: 480,
+    originalPrice: null,
+    image: 'https://images.unsplash.com/photo-1638247025967-b4e38f787b76?w=600&h=800&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1638247025967-b4e38f787b76?w=600&h=800&fit=crop'
+    ],
+    sizes: ['40', '41', '42', '43', '44'],
+    description: 'Sleek Chelsea boots with elastic side panels. Versatile footwear that transitions from casual to smart.',
+    badge: 'limited',
+    stock: 'low-stock',
+    isNew: false,
+    isTrending: false,
+    tags: ['shoes', 'boots', 'formal'],
+    isShoe: true
+  },
+
+  // ===== MEN'S ACCESSORIES =====
+  {
+    id: 'ma001',
+    name: 'Leather Bifold Wallet',
+    category: 'Accessories',
+    gender: 'men',
+    price: 120,
+    originalPrice: null,
+    image: 'https://images.unsplash.com/photo-1627123424574-724758594e93?w=600&h=800&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1627123424574-724758594e93?w=600&h=800&fit=crop'
+    ],
+    sizes: ['One Size'],
+    description: 'Slim leather bifold wallet with multiple card slots. Minimalist design for everyday carry.',
+    badge: null,
+    stock: 'in-stock',
+    isNew: false,
+    isTrending: false,
+    tags: ['accessories', 'leather']
+  },
+
+  // ===== WOMEN'S TOPS =====
+  {
+    id: 'wt001',
+    name: 'Ribbed Crop Top',
+    category: 'Tops',
+    gender: 'women',
+    price: 75,
+    originalPrice: null,
+    image: 'https://images.unsplash.com/photo-1564257631407-4deb1f99d992?w=600&h=800&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1564257631407-4deb1f99d992?w=600&h=800&fit=crop'
+    ],
+    sizes: ['XS', 'S', 'M', 'L'],
+    description: 'Fitted ribbed crop top with a flattering silhouette. A versatile layering piece for any season.',
+    badge: null,
+    stock: 'in-stock',
+    isNew: false,
+    isTrending: true,
+    tags: ['tops', 'casual']
+  },
+  {
+    id: 'wt002',
+    name: 'Satin Cami Top',
+    category: 'Tops',
+    gender: 'women',
+    price: 110,
+    originalPrice: null,
+    image: 'https://images.unsplash.com/photo-1485462537746-965f33f7f6a7?w=600&h=800&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1485462537746-965f33f7f6a7?w=600&h=800&fit=crop'
+    ],
+    sizes: ['XS', 'S', 'M', 'L'],
+    description: 'Elegant satin camisole with adjustable straps. Perfect for layering or styled on its own.',
+    badge: 'new',
+    stock: 'in-stock',
+    isNew: true,
+    isTrending: true,
+    tags: ['tops', 'evening']
+  },
+  {
+    id: 'wt003',
+    name: 'Oversized Blazer Top',
+    category: 'Tops',
+    gender: 'women',
+    price: 195,
+    originalPrice: 260,
+    image: 'https://images.unsplash.com/photo-1591369822096-ffd140ec948f?w=600&h=800&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1591369822096-ffd140ec948f?w=600&h=800&fit=crop'
+    ],
+    sizes: ['S', 'M', 'L'],
+    description: 'Structured oversized blazer that doubles as a top. Power dressing with a fashion-forward edge.',
+    badge: 'sale',
+    stock: 'in-stock',
+    isNew: false,
+    isTrending: false,
+    tags: ['tops', 'formal', 'office']
+  },
+
+  // ===== WOMEN'S DRESSES =====
+  {
+    id: 'wd001',
+    name: 'Midi Wrap Dress',
+    category: 'Dresses',
+    gender: 'women',
+    price: 280,
+    originalPrice: null,
+    image: 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=600&h=800&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=600&h=800&fit=crop'
+    ],
+    sizes: ['XS', 'S', 'M', 'L'],
+    description: 'Flattering midi wrap dress with tie waist. A timeless silhouette for lectures, dates, and events.',
+    badge: 'new',
+    stock: 'in-stock',
+    isNew: true,
+    isTrending: true,
+    tags: ['dresses', 'elegant']
+  },
+  {
+    id: 'wd002',
+    name: 'Bodycon Mini Dress',
+    category: 'Dresses',
+    gender: 'women',
+    price: 200,
+    originalPrice: null,
+    image: 'https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=600&h=800&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=600&h=800&fit=crop'
+    ],
+    sizes: ['XS', 'S', 'M', 'L'],
+    description: 'Figure-hugging bodycon mini dress with clean lines. Confidence-boosting style for nights out.',
+    badge: null,
+    stock: 'in-stock',
+    isNew: false,
+    isTrending: true,
+    tags: ['dresses', 'party']
+  },
+
+  // ===== WOMEN'S JEANS =====
+  {
+    id: 'wj001',
+    name: 'High-Rise Straight Leg Jeans',
+    category: 'Jeans',
+    gender: 'women',
+    price: 230,
+    originalPrice: null,
+    image: 'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=600&h=800&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=600&h=800&fit=crop'
+    ],
+    sizes: ['24', '26', '28', '30', '32'],
+    description: 'High-waisted straight leg jeans with a flattering rise. Premium denim that goes with everything.',
+    badge: null,
+    stock: 'in-stock',
+    isNew: false,
+    isTrending: true,
+    tags: ['denim', 'classic']
+  },
+  {
+    id: 'wj002',
+    name: 'Wide Leg Palazzo Jeans',
+    category: 'Jeans',
+    gender: 'women',
+    price: 260,
+    originalPrice: 340,
+    image: 'https://images.unsplash.com/photo-1582418702059-97ebafb35d09?w=600&h=800&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1582418702059-97ebafb35d09?w=600&h=800&fit=crop'
+    ],
+    sizes: ['26', '28', '30'],
+    description: 'Statement wide-leg palazzo jeans with flowing silhouette. Fashion-forward denim for the trend-conscious.',
+    badge: 'sale',
+    stock: 'low-stock',
+    isNew: false,
+    isTrending: false,
+    tags: ['denim', 'wide-leg']
+  },
+
+  // ===== WOMEN'S CARGO PANTS =====
+  {
+    id: 'wc001',
+    name: 'Relaxed Cargo Trousers',
+    category: 'Cargo Pants',
+    gender: 'women',
+    price: 240,
+    originalPrice: null,
+    image: 'https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=600&h=800&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=600&h=800&fit=crop'
+    ],
+    sizes: ['XS', 'S', 'M', 'L'],
+    description: 'Relaxed-fit cargo trousers with utility pockets. Functional fashion with a feminine edge.',
+    badge: 'new',
+    stock: 'in-stock',
+    isNew: true,
+    isTrending: true,
+    tags: ['streetwear', 'cargo']
+  },
+
+  // ===== WOMEN'S TROUSERS =====
+  {
+    id: 'wtr001',
+    name: 'Tailored Wide-Leg Trousers',
+    category: 'Trousers',
+    gender: 'women',
+    price: 270,
+    originalPrice: null,
+    image: 'https://images.unsplash.com/photo-1506629082955-511b1aa562c8?w=600&h=800&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1506629082955-511b1aa562c8?w=600&h=800&fit=crop'
+    ],
+    sizes: ['XS', 'S', 'M', 'L'],
+    description: 'Elegantly tailored wide-leg trousers. From boardrooms to brunch — polished versatility.',
+    badge: null,
+    stock: 'in-stock',
+    isNew: false,
+    isTrending: false,
+    tags: ['formal', 'office', 'tailoring']
+  },
+
+  // ===== WOMEN'S CASUAL WEAR =====
+  {
+    id: 'wcw001',
+    name: 'Matching Lounge Set',
+    category: 'Casual Wear',
+    gender: 'women',
+    price: 190,
+    originalPrice: null,
+    image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&h=800&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&h=800&fit=crop'
+    ],
+    sizes: ['S', 'M', 'L'],
+    description: 'Co-ord lounge set with relaxed fit top and matching bottoms. Effortless style for casual days.',
+    badge: null,
+    stock: 'in-stock',
+    isNew: false,
+    isTrending: false,
+    tags: ['casual', 'loungewear']
+  },
+
+  // ===== WOMEN'S FORMAL WEAR =====
+  {
+    id: 'wf001',
+    name: 'Structured Blazer Dress',
+    category: 'Formal Wear',
+    gender: 'women',
+    price: 380,
+    originalPrice: null,
+    image: 'https://images.unsplash.com/photo-1548690312-e3b507d8c110?w=600&h=800&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1548690312-e3b507d8c110?w=600&h=800&fit=crop'
+    ],
+    sizes: ['XS', 'S', 'M', 'L'],
+    description: 'Architecturally structured blazer dress with double-breasted detail. Command attention at every presentation.',
+    badge: 'limited',
+    stock: 'low-stock',
+    isNew: true,
+    isTrending: true,
+    tags: ['formal', 'power-dressing']
+  },
+
+  // ===== WOMEN'S SHOES =====
+  {
+    id: 'wsh001',
+    name: 'Chunky Platform Sneakers',
+    category: 'Sneakers',
+    gender: 'women',
+    price: 320,
+    originalPrice: null,
+    image: 'https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=600&h=800&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=600&h=800&fit=crop'
+    ],
+    sizes: ['36', '37', '38', '39', '40'],
+    description: 'Bold chunky platform sneakers with elevated sole. Statement footwear for street-style queens.',
+    badge: 'new',
+    stock: 'in-stock',
+    isNew: true,
+    isTrending: true,
+    tags: ['shoes', 'sneakers', 'platform'],
+    isShoe: true
+  },
+  {
+    id: 'wsh002',
+    name: 'Pointed Kitten Heels',
+    category: 'Formal Shoes',
+    gender: 'women',
+    price: 290,
+    originalPrice: null,
+    image: 'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=600&h=800&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=600&h=800&fit=crop'
+    ],
+    sizes: ['36', '37', '38', '39', '40'],
+    description: 'Elegant pointed-toe kitten heels. Sophisticated comfort for office and evening wear.',
+    badge: null,
+    stock: 'in-stock',
+    isNew: false,
+    isTrending: false,
+    tags: ['shoes', 'formal', 'heels'],
+    isShoe: true
+  },
+  {
+    id: 'wsh003',
+    name: 'Minimal Leather Mules',
+    category: 'Trending Footwear',
+    gender: 'women',
+    price: 260,
+    originalPrice: 340,
+    image: 'https://images.unsplash.com/photo-1603808033192-082d6919d3e1?w=600&h=800&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1603808033192-082d6919d3e1?w=600&h=800&fit=crop'
+    ],
+    sizes: ['37', '38', '39', '40'],
+    description: 'Minimalist leather slide mules with clean design. Understated luxury for everyday elegance.',
+    badge: 'sale',
+    stock: 'in-stock',
+    isNew: false,
+    isTrending: true,
+    tags: ['shoes', 'trending', 'mules'],
+    isShoe: true
+  },
+  {
+    id: 'wsh004',
+    name: 'Ankle Strap Block Heels',
+    category: 'Formal Shoes',
+    gender: 'women',
+    price: 310,
+    originalPrice: null,
+    image: 'https://images.unsplash.com/photo-1596703263926-eb0762ee17e4?w=600&h=800&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1596703263926-eb0762ee17e4?w=600&h=800&fit=crop'
+    ],
+    sizes: ['36', '37', '38', '39'],
+    description: 'Stable block heels with ankle strap detail. Dance-floor-ready comfort with sophisticated style.',
+    badge: 'limited',
+    stock: 'low-stock',
+    isNew: true,
+    isTrending: false,
+    tags: ['shoes', 'formal', 'heels'],
+    isShoe: true
+  },
+
+  // ===== WOMEN'S ACCESSORIES =====
+  {
+    id: 'wa001',
+    name: 'Mini Crossbody Bag',
+    category: 'Accessories',
+    gender: 'women',
+    price: 180,
+    originalPrice: null,
+    image: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=600&h=800&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=600&h=800&fit=crop'
+    ],
+    sizes: ['One Size'],
+    description: 'Compact crossbody bag with adjustable strap. Essential carry for campus and city life.',
+    badge: null,
+    stock: 'in-stock',
+    isNew: false,
+    isTrending: true,
+    tags: ['accessories', 'bags']
+  }
+];
+
+// Export for module usage
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = PRODUCTS;
+}
+
+// js/utils/storage.js
+
+const Storage = {
+  get(key) {
+    try {
+      const item = localStorage.getItem(key);
+      return item ? JSON.parse(item) : null;
+    } catch (e) {
+      console.error(`Error reading ${key} from storage:`, e);
+      return null;
+    }
+  },
+
+  set(key, value) {
+    try {
+      localStorage.setItem(key, JSON.stringify(value));
+    } catch (e) {
+      console.error(`Error writing ${key} to storage:`, e);
+    }
+  },
+
+  remove(key) {
+    try {
+      localStorage.removeItem(key);
+    } catch (e) {
+      console.error(`Error removing ${key} from storage:`, e);
+    }
+  }
+};
+
+// js/utils/helpers.js
+
+const Helpers = {
+  formatPrice(amount) {
+    return `GH₵ ${amount.toFixed(2)}`;
+  },
+
+  generateId() {
+    return 'id_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+  },
+
+  generateOrderNumber() {
+    const prefix = 'RB';
+    const timestamp = Date.now().toString(36).toUpperCase();
+    const random = Math.random().toString(36).substr(2, 4).toUpperCase();
+    return `${prefix}-${timestamp}-${random}`;
+  },
+
+  debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+      const later = () => {
+        clearTimeout(timeout);
+        func(...args);
+      };
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+    };
+  },
+
+  scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  },
+
+  getUrlParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+  },
+
+  setUrlParam(param, value) {
+    const url = new URL(window.location);
+    if (value) {
+      url.searchParams.set(param, value);
+    } else {
+      url.searchParams.delete(param);
+    }
+    window.history.replaceState({}, '', url);
+  },
+
+  truncateText(text, maxLength) {
+    if (text.length <= maxLength) return text;
+    return text.substr(0, maxLength).trim() + '...';
+  }
+};
+
+// js/components/navigation.js
+
+const Navigation = {
+  init() {
+    this.header = document.querySelector('.header');
+    this.menuToggle = document.querySelector('.header__menu-toggle');
+    this.mobileNav = document.querySelector('.nav-mobile');
+    this.overlay = document.querySelector('.nav-overlay');
+    this.mobileClose = document.querySelector('.nav-mobile__close');
+    this.announcementClose = document.querySelector('.announcement-bar__close');
+
+    this.bindEvents();
+    this.handleScroll();
+    this.setActiveLink();
+  },
+
+  bindEvents() {
+    if (this.menuToggle) {
+      this.menuToggle.addEventListener('click', () => this.toggleMobileMenu());
+    }
+
+    if (this.overlay) {
+      this.overlay.addEventListener('click', () => this.closeMobileMenu());
+    }
+
+    if (this.mobileClose) {
+      this.mobileClose.addEventListener('click', () => this.closeMobileMenu());
+    }
+
+    // Close on mobile link click
+    document.querySelectorAll('.nav-mobile__link').forEach(link => {
+      link.addEventListener('click', () => this.closeMobileMenu());
+    });
+
+    // Header scroll effect
+    window.addEventListener('scroll', Helpers.debounce(() => this.handleScroll(), 10));
+
+    // Announcement bar close
+    if (this.announcementClose) {
+      this.announcementClose.addEventListener('click', () => {
+        const bar = document.querySelector('.announcement-bar');
+        if (bar) {
+          bar.style.display = 'none';
+          Storage.set('announcement-closed', true);
+        }
+      });
+    }
+
+    // Check if announcement was previously closed
+    if (Storage.get('announcement-closed')) {
+      const bar = document.querySelector('.announcement-bar');
+      if (bar) bar.style.display = 'none';
+    }
+
+    // Escape key closes mobile menu
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') this.closeMobileMenu();
+    });
+  },
+
+  toggleMobileMenu() {
+    const isOpen = this.mobileNav.classList.contains('open');
+    if (isOpen) {
+      this.closeMobileMenu();
+    } else {
+      this.openMobileMenu();
+    }
+  },
+
+  openMobileMenu() {
+    this.mobileNav.classList.add('open');
+    this.overlay.classList.add('active');
+    this.menuToggle.classList.add('active');
+    document.body.classList.add('no-scroll');
+  },
+
+  closeMobileMenu() {
+    if (this.mobileNav) this.mobileNav.classList.remove('open');
+    if (this.overlay) this.overlay.classList.remove('active');
+    if (this.menuToggle) this.menuToggle.classList.remove('active');
+    document.body.classList.remove('no-scroll');
+  },
+
+  handleScroll() {
+    if (!this.header) return;
+    if (window.scrollY > 50) {
+      this.header.classList.add('scrolled');
+    } else {
+      this.header.classList.remove('scrolled');
+    }
+  },
+
+  setActiveLink() {
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const navLinks = document.querySelectorAll('.nav-desktop__link, .nav-mobile__link');
+
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+        link.classList.add('active');
+      }
+    });
+  }
+};
+
+// js/components/cart.js
+
+const Cart = {
+  items: [],
+
+  init() {
+    this.items = Storage.get('rb-cart') || [];
+    this.updateBadge();
+  },
+
+  addItem(productId, size, quantity = 1) {
+    const product = PRODUCTS.find(p => p.id === productId);
+    if (!product) return;
+
+    const existingIndex = this.items.findIndex(
+      item => item.productId === productId && item.size === size
+    );
+
+    if (existingIndex > -1) {
+      this.items[existingIndex].quantity += quantity;
+    } else {
+      this.items.push({
+        id: Helpers.generateId(),
+        productId: product.id,
+        name: product.name,
+        price: product.price,
+        image: product.image,
+        size: size,
+        category: product.category,
+        quantity: quantity
+      });
+    }
+
+    this.save();
+    this.updateBadge();
+    Toast.show(`${product.name} added to cart`, 'success');
+  },
+
+  removeItem(itemId) {
+    this.items = this.items.filter(item => item.id !== itemId);
+    this.save();
+    this.updateBadge();
+  },
+
+  updateQuantity(itemId, quantity) {
+    const item = this.items.find(i => i.id === itemId);
+    if (item) {
+      if (quantity <= 0) {
+        this.removeItem(itemId);
+      } else {
+        item.quantity = quantity;
+        this.save();
+        this.updateBadge();
+      }
+    }
+  },
+
+  getSubtotal() {
+    return this.items.reduce((total, item) => total + (item.price * item.quantity), 0);
+  },
+
+  getItemCount() {
+    return this.items.reduce((count, item) => count + item.quantity, 0);
+  },
+
+  clear() {
+    this.items = [];
+    this.save();
+    this.updateBadge();
+  },
+
+  save() {
+    Storage.set('rb-cart', this.items);
+  },
+
+  updateBadge() {
+    const badges = document.querySelectorAll('.cart-badge');
+    const count = this.getItemCount();
+    badges.forEach(badge => {
+      badge.textContent = count;
+      badge.style.display = count > 0 ? 'flex' : 'none';
+    });
+  }
+};
+
+// js/components/wishlist.js
+
+const Wishlist = {
+  items: [],
+
+  init() {
+    this.items = Storage.get('rb-wishlist') || [];
+    this.updateBadge();
+  },
+
+  toggle(productId) {
+    const index = this.items.indexOf(productId);
+    if (index > -1) {
+      this.items.splice(index, 1);
+      Toast.show('Removed from wishlist', 'info');
+    } else {
+      this.items.push(productId);
+      Toast.show('Added to wishlist', 'success');
+    }
+    this.save();
+    this.updateBadge();
+    this.updateButtons();
+  },
+
+  has(productId) {
+    return this.items.includes(productId);
+  },
+
+  save() {
+    Storage.set('rb-wishlist', this.items);
+  },
+
+  updateBadge() {
+    const badges = document.querySelectorAll('.wishlist-badge');
+    const count = this.items.length;
+    badges.forEach(badge => {
+      badge.textContent = count;
+      badge.style.display = count > 0 ? 'flex' : 'none';
+    });
+  },
+
+  updateButtons() {
+    document.querySelectorAll('[data-wishlist-id]').forEach(btn => {
+      const id = btn.dataset.wishlistId;
+      if (this.has(id)) {
+        btn.classList.add('wishlisted');
+      } else {
+        btn.classList.remove('wishlisted');
+      }
+    });
+  }
+};
+
+// js/components/quickview.js
+
+const QuickView = {
+  init() {
+    this.modalOverlay = document.getElementById('quickViewModal');
+    if (!this.modalOverlay) this.createModal();
+    this.bindEvents();
+  },
+
+  createModal() {
+    const modal = document.createElement('div');
+    modal.id = 'quickViewModal';
+    modal.className = 'modal-overlay';
+    modal.innerHTML = `
+      <div class="modal" role="dialog" aria-modal="true">
+        <button class="modal__close" aria-label="Close quick view">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+        <div class="quick-view" id="quickViewContent"></div>
+      </div>
+    `;
+    document.body.appendChild(modal);
+    this.modalOverlay = modal;
+
+    modal.querySelector('.modal__close').addEventListener('click', () => this.close());
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) this.close();
+    });
+  },
+
+  bindEvents() {
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') this.close();
+    });
+  },
+
+  open(productId) {
+    const product = PRODUCTS.find(p => p.id === productId);
+    if (!product) return;
+
+    const content = document.getElementById('quickViewContent');
+    content.innerHTML = `
+      <div class="quick-view__image">
+        <img src="${product.image}" alt="${product.name}" loading="lazy">
+      </div>
+      <div class="quick-view__info">
+        <span class="quick-view__category">${product.category}</span>
+        <h3 class="quick-view__name">${product.name}</h3>
+        <div class="quick-view__price">
+          ${product.originalPrice ? `<span class="product-card__price-original">${Helpers.formatPrice(product.originalPrice)}</span>` : ''}
+          ${Helpers.formatPrice(product.price)}
+        </div>
+        <p style="font-size: var(--fs-sm); color: var(--color-gray); margin-bottom: var(--space-lg); line-height: var(--lh-relaxed);">${product.description}</p>
+        <div class="quick-view__sizes">
+          <div class="quick-view__sizes-label">Select Size</div>
+          <div class="size-options">
+            ${product.sizes.map((size, i) => `
+              <button class="size-option ${i === 0 ? 'selected' : ''}" data-size="${size}">${size}</button>
+            `).join('')}
+          </div>
+        </div>
+        <div class="quick-view__quantity">
+          <div class="quantity-selector">
+            <button class="quantity-selector__btn" data-action="decrease">−</button>
+            <input type="number" class="quantity-selector__input" value="1" min="1" max="10" aria-label="Quantity">
+            <button class="quantity-selector__btn" data-action="increase">+</button>
+          </div>
+        </div>
+        <div class="quick-view__buttons">
+          <button class="btn btn--primary btn--full" id="qvAddToCart" data-product-id="${product.id}">Add to Cart</button>
+          <a href="product.html?id=${product.id}" class="btn btn--secondary btn--full">View Full Details</a>
+        </div>
+      </div>
+    `;
+
+    // Size selection
+    content.querySelectorAll('.size-option').forEach(btn => {
+      btn.addEventListener('click', () => {
+        content.querySelectorAll('.size-option').forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+      });
+    });
+
+    // Quantity
+    const qtyInput = content.querySelector('.quantity-selector__input');
+    content.querySelectorAll('.quantity-selector__btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        let val = parseInt(qtyInput.value);
+        if (btn.dataset.action === 'increase' && val < 10) {
+          qtyInput.value = val + 1;
+        } else if (btn.dataset.action === 'decrease' && val > 1) {
+          qtyInput.value = val - 1;
+        }
+      });
+    });
+
+    // Add to cart
+    content.querySelector('#qvAddToCart').addEventListener('click', () => {
+      const selectedSize = content.querySelector('.size-option.selected');
+      const qty = parseInt(qtyInput.value);
+      if (selectedSize) {
+        Cart.addItem(product.id, selectedSize.dataset.size, qty);
+        this.close();
+      }
+    });
+
+    this.modalOverlay.classList.add('active');
+    document.body.classList.add('no-scroll');
+  },
+
+  close() {
+    if (this.modalOverlay) {
+      this.modalOverlay.classList.remove('active');
+      document.body.classList.remove('no-scroll');
+    }
+  }
+};
+
+// js/components/filters.js
+
+const Filters = {
+  state: {
+    search: '',
+    categories: [],
+    genders: [],
+    priceMin: null,
+    priceMax: null,
+    sizes: [],
+    sort: 'newest'
+  },
+
+  init(options = {}) {
+    this.onUpdate = options.onUpdate || (() => {});
+    this.bindEvents();
+  },
+
+  bindEvents() {
+    // Search
+    const searchInput = document.querySelector('.shop-toolbar__search input');
+    if (searchInput) {
+      searchInput.addEventListener('input', Helpers.debounce((e) => {
+        this.state.search = e.target.value.toLowerCase();
+        this.onUpdate();
+      }, 300));
+    }
+
+    // Sort
+    const sortSelect = document.querySelector('.shop-toolbar__sort select');
+    if (sortSelect) {
+      sortSelect.addEventListener('change', (e) => {
+        this.state.sort = e.target.value;
+        this.onUpdate();
+      });
+    }
+
+    // Filter options
+    document.querySelectorAll('.filter-option').forEach(option => {
+      option.addEventListener('click', () => {
+        option.classList.toggle('active');
+        this.collectFilters();
+        this.onUpdate();
+      });
+    });
+
+    // Filter group collapse
+    document.querySelectorAll('.filter-group__title').forEach(title => {
+      title.addEventListener('click', () => {
+        title.closest('.filter-group').classList.toggle('collapsed');
+      });
+    });
+
+    // Price range
+    const priceMin = document.querySelector('.price-range__input[data-price="min"]');
+    const priceMax = document.querySelector('.price-range__input[data-price="max"]');
+    if (priceMin) {
+      priceMin.addEventListener('input', Helpers.debounce(() => {
+        this.state.priceMin = priceMin.value ? parseInt(priceMin.value) : null;
+        this.onUpdate();
+      }, 500));
+    }
+    if (priceMax) {
+      priceMax.addEventListener('input', Helpers.debounce(() => {
+        this.state.priceMax = priceMax.value ? parseInt(priceMax.value) : null;
+        this.onUpdate();
+      }, 500));
+    }
+
+    // Mobile filter toggle
+    const filterToggle = document.querySelector('.shop-toolbar__filter-btn');
+    const sidebar = document.querySelector('.shop-sidebar');
+    const sidebarClose = document.querySelector('.shop-sidebar__close');
+
+    if (filterToggle && sidebar) {
+      filterToggle.addEventListener('click', () => {
+        sidebar.classList.add('mobile-open');
+        document.body.classList.add('no-scroll');
+      });
+    }
+
+    if (sidebarClose && sidebar) {
+      sidebarClose.addEventListener('click', () => {
+        sidebar.classList.remove('mobile-open');
+        document.body.classList.remove('no-scroll');
+      });
+    }
+  },
+
+  collectFilters() {
+    this.state.categories = [];
+    this.state.genders = [];
+    this.state.sizes = [];
+
+    document.querySelectorAll('.filter-option.active').forEach(option => {
+      const type = option.dataset.filterType;
+      const value = option.dataset.filterValue;
+      if (type === 'category') this.state.categories.push(value);
+      else if (type === 'gender') this.state.genders.push(value);
+      else if (type === 'size') this.state.sizes.push(value);
+    });
+  },
+
+  apply(products) {
+    let filtered = [...products];
+
+    // Search
+    if (this.state.search) {
+      filtered = filtered.filter(p =>
+        p.name.toLowerCase().includes(this.state.search) ||
+        p.category.toLowerCase().includes(this.state.search) ||
+        p.tags.some(t => t.includes(this.state.search))
+      );
+    }
+
+    // Categories
+    if (this.state.categories.length > 0) {
+      filtered = filtered.filter(p => this.state.categories.includes(p.category));
+    }
+
+    // Gender
+    if (this.state.genders.length > 0) {
+      filtered = filtered.filter(p => this.state.genders.includes(p.gender));
+    }
+
+    // Price range
+    if (this.state.priceMin !== null) {
+      filtered = filtered.filter(p => p.price >= this.state.priceMin);
+    }
+    if (this.state.priceMax !== null) {
+      filtered = filtered.filter(p => p.price <= this.state.priceMax);
+    }
+
+    // Sizes
+    if (this.state.sizes.length > 0) {
+      filtered = filtered.filter(p => p.sizes.some(s => this.state.sizes.includes(s)));
+    }
+
+    // Sort
+    switch (this.state.sort) {
+      case 'price-low':
+        filtered.sort((a, b) => a.price - b.price);
+        break;
+      case 'price-high':
+        filtered.sort((a, b) => b.price - a.price);
+        break;
+      case 'name':
+        filtered.sort((a, b) => a.name.localeCompare(b.name));
+        break;
+      case 'newest':
+      default:
+        filtered.sort((a, b) => (b.isNew ? 1 : 0) - (a.isNew ? 1 : 0));
+        break;
+    }
+
+    return filtered;
+  }
+};
+
+// js/components/forms.js
+
+const FormValidator = {
+  validate(form) {
+    let isValid = true;
+    const fields = form.querySelectorAll('[required]');
+
+    // Clear previous errors
+    form.querySelectorAll('.form-error').forEach(err => err.remove());
+    form.querySelectorAll('.error').forEach(el => el.classList.remove('error'));
+
+    fields.forEach(field => {
+      const value = field.value.trim();
+
+      if (!value) {
+        this.showError(field, 'This field is required');
+        isValid = false;
+      } else if (field.type === 'email' && !this.isValidEmail(value)) {
+        this.showError(field, 'Please enter a valid email');
+        isValid = false;
+      } else if (field.type === 'tel' && !this.isValidPhone(value)) {
+        this.showError(field, 'Please enter a valid phone number');
+        isValid = false;
+      }
+    });
+
+    return isValid;
+  },
+
+  showError(field, message) {
+    field.classList.add('error');
+    const errorDiv = document.createElement('div');
+    errorDiv.className = 'form-error';
+    errorDiv.textContent = message;
+    field.parentNode.appendChild(errorDiv);
+  },
+
+  isValidEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  },
+
+  isValidPhone(phone) {
+    return /^[\d\s+\-()]{8,}$/.test(phone);
+  }
+};
+
+// js/components/toast.js — inline into app.js
+
+const Toast = {
+  container: null,
+
+  init() {
+    this.container = document.createElement('div');
+    this.container.className = 'toast-container';
+    document.body.appendChild(this.container);
+  },
+
+  show(message, type = 'info', duration = 3000) {
+    if (!this.container) this.init();
+
+    const toast = document.createElement('div');
+    toast.className = `toast toast--${type}`;
+    toast.innerHTML = `
+      <span>${message}</span>
+      <button class="toast__close" aria-label="Close notification">&times;</button>
+    `;
+
+    toast.querySelector('.toast__close').addEventListener('click', () => {
+      toast.remove();
+    });
+
+    this.container.appendChild(toast);
+
+    setTimeout(() => {
+      if (toast.parentNode) {
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateX(100%)';
+        toast.style.transition = 'all 300ms ease';
+        setTimeout(() => toast.remove(), 300);
+      }
+    }, duration);
+  }
+};
+
+// js/pages/home.js
+
+const HomePage = {
+  init() {
+    this.renderNewArrivals();
+    this.renderTrending();
+    this.initScrollAnimations();
+  },
+
+  renderNewArrivals() {
+    const container = document.getElementById('newArrivalsGrid');
+    if (!container) return;
+
+    const newProducts = PRODUCTS.filter(p => p.isNew).slice(0, 8);
+    container.innerHTML = newProducts.map(p => this.createProductCard(p)).join('');
+    this.bindProductEvents(container);
+  },
+
+  renderTrending() {
+    const container = document.getElementById('trendingGrid');
+    if (!container) return;
+
+    const trending = PRODUCTS.filter(p => p.isTrending).slice(0, 8);
+    container.innerHTML = trending.map(p => this.createProductCard(p)).join('');
+    this.bindProductEvents(container);
+  },
+
+  createProductCard(product) {
+    const badgeHTML = product.badge ? `<span class="product-card__badge product-card__badge--${product.badge}">${product.badge}</span>` : '';
+    const originalPriceHTML = product.originalPrice ? `<span class="product-card__price-original">${Helpers.formatPrice(product.originalPrice)}</span>` : '';
+    const sizesHTML = product.sizes.length > 1 ? `
+      <div class="product-card__sizes">
+        ${product.sizes.slice(0, 5).map(s => `<span class="product-card__size">${s}</span>`).join('')}
+        ${product.sizes.length > 5 ? '<span class="product-card__size">+</span>' : ''}
+      </div>
+    ` : '';
+
+    return `
+      <article class="product-card" data-product-id="${product.id}">
+        <div class="product-card__image-wrapper">
+          <img class="product-card__image" src="${product.image}" alt="${product.name}" loading="lazy">
+          ${badgeHTML}
+          <div class="product-card__actions">
+            <button class="product-card__action-btn ${Wishlist.has(product.id) ? 'wishlisted' : ''}" data-wishlist-id="${product.id}" aria-label="Add to wishlist">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+            <button class="product-card__action-btn" data-quickview-id="${product.id}" aria-label="Quick view">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+          </div>
+          <div class="product-card__quick-add" data-add-id="${product.id}" data-default-size="${product.sizes[0]}">Add to Cart</div>
+        </div>
+        <div class="product-card__info">
+          <span class="product-card__category">${product.category}</span>
+          <h3 class="product-card__name">
+            <a href="product.html?id=${product.id}">${product.name}</a>
+          </h3>
+          <div class="product-card__price">
+            <span class="product-card__price-current">${Helpers.formatPrice(product.price)}</span>
+            ${originalPriceHTML}
+          </div>
+          ${sizesHTML}
+        </div>
+      </article>
+    `;
+  },
+
+  bindProductEvents(container) {
+    // Wishlist
+    container.querySelectorAll('[data-wishlist-id]').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        Wishlist.toggle(btn.dataset.wishlistId);
+      });
+    });
+
+    // Quick view
+    container.querySelectorAll('[data-quickview-id]').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        QuickView.open(btn.dataset.quickviewId);
+      });
+    });
+
+    // Quick add
+    container.querySelectorAll('[data-add-id]').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        Cart.addItem(btn.dataset.addId, btn.dataset.defaultSize);
+      });
+    });
+  },
+
+  initScrollAnimations() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.animate-on-scroll').forEach(el => {
+      observer.observe(el);
+    });
+  }
+};
+
+// js/pages/shop.js
+
+const ShopPage = {
+  allProducts: [],
+  currentPage: 1,
+  perPage: 12,
+
+  init(products = PRODUCTS) {
+    this.allProducts = products;
+    Filters.init({ onUpdate: () => this.render() });
+    this.render();
+  },
+
+  render() {
+    const container = document.getElementById('shopProductGrid');
+    const countEl = document.querySelector('.shop-toolbar__count');
+    if (!container) return;
+
+    const filtered = Filters.apply(this.allProducts);
+    this.currentPage = 1;
+    const paged = filtered.slice(0, this.currentPage * this.perPage);
+
+    if (filtered.length === 0) {
+      container.innerHTML = `
+        <div class="empty-state" style="grid-column: 1/-1;">
+          <div class="empty-state__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          </div>
+          <h3 class="empty-state__title">No products found</h3>
+          <p class="empty-state__text">Try adjusting your filters or search terms</p>
+        </div>
+      `;
+    } else {
+      container.innerHTML = paged.map(p => HomePage.createProductCard(p)).join('');
+      HomePage.bindProductEvents(container);
+    }
+
+    if (countEl) {
+      countEl.textContent = `${filtered.length} product${filtered.length !== 1 ? 's' : ''}`;
+    }
+
+    // Load more / pagination
+    this.renderPagination(filtered.length);
+  },
+
+  renderPagination(total) {
+    const container = document.getElementById('shopPagination');
+    if (!container) return;
+
+    const totalPages = Math.ceil(total / this.perPage);
+    if (totalPages <= 1) {
+      container.innerHTML = '';
+      return;
+    }
+
+    let html = '';
+    for (let i = 1; i <= totalPages; i++) {
+      html += `<button class="pagination__btn ${i === this.currentPage ? 'active' : ''}" data-page="${i}">${i}</button>`;
+    }
+    container.innerHTML = html;
+
+    container.querySelectorAll('.pagination__btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        this.currentPage = parseInt(btn.dataset.page);
+        const filtered = Filters.apply(this.allProducts);
+        const start = (this.currentPage - 1) * this.perPage;
+        const paged = filtered.slice(start, start + this.perPage);
+
+        const grid = document.getElementById('shopProductGrid');
+        grid.innerHTML = paged.map(p => HomePage.createProductCard(p)).join('');
+        HomePage.bindProductEvents(grid);
+
+        container.querySelectorAll('.pagination__btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        Helpers.scrollToTop();
+      });
+    });
+  }
+};
+
+// js/pages/product-detail.js
+
+const ProductDetailPage = {
+  init() {
+    const productId = Helpers.getUrlParam('id');
+    if (!productId) return;
+
+    const product = PRODUCTS.find(p => p.id === productId);
+    if (!product) {
+      document.querySelector('.product-detail').innerHTML = `
+        <div class="container">
+          <div class="empty-state">
+            <h3 class="empty-state__title">Product Not Found</h3>
+            <p class="empty-state__text">The product you're looking for doesn't exist.</p>
+            <a href="shop.html" class="btn btn--primary">Back to Shop</a>
+          </div>
+        </div>
+      `;
+      return;
+    }
+
+    this.renderProduct(product);
+    this.renderRelated(product);
+  },
+
+  renderProduct(product) {
+    const container = document.getElementById('productDetailContent');
+    if (!container) return;
+
+    const stockClass = product.stock === 'low-stock' ? '--low' : product.stock === 'out-of-stock' ? '--out' : '';
+    const stockText = product.stock === 'in-stock' ? 'In Stock' : product.stock === 'low-stock' ? 'Low Stock — Order Soon' : 'Out of Stock';
+
+    container.innerHTML = `
+      <div class="product-detail__gallery">
+        <div class="product-detail__main-image">
+          <img id="mainProductImage" src="${product.images[0]}" alt="${product.name}">
+        </div>
+        ${product.images.length > 1 ? `
+          <div class="product-detail__thumbnails">
+            ${product.images.map((img, i) => `
+              <button class="product-detail__thumbnail ${i === 0 ? 'active' : ''}" data-image="${img}">
+                <img src="${img}" alt="${product.name} view ${i + 1}">
+              </button>
+            `).join('')}
+          </div>
+        ` : ''}
+      </div>
+      <div class="product-detail__info">
+        <span class="product-detail__category">${product.category}</span>
+        <h1 class="product-detail__name">${product.name}</h1>
+        <div class="product-detail__price">
+          <span>${Helpers.formatPrice(product.price)}</span>
+          ${product.originalPrice ? `<span class="product-detail__price-original">${Helpers.formatPrice(product.originalPrice)}</span>` : ''}
+        </div>
+        <div class="product-detail__stock">
+          <span class="product-detail__stock-dot${stockClass}"></span>
+          ${stockText}
+        </div>
+        <p class="product-detail__description">${product.description}</p>
+        <div class="product-detail__options">
+          <div class="product-detail__option-label">Select Size</div>
+          <div class="size-options">
+            ${product.sizes.map((size, i) => `
+              <button class="size-option ${i === 0 ? 'selected' : ''}" data-size="${size}">${size}</button>
+            `).join('')}
+          </div>
+        </div>
+        <div class="quick-view__quantity" style="margin-bottom: var(--space-xl);">
+          <span class="product-detail__option-label">Quantity</span>
+          <div class="quantity-selector">
+            <button class="quantity-selector__btn" data-action="decrease">−</button>
+            <input type="number" class="quantity-selector__input" value="1" min="1" max="10" id="pdQty" aria-label="Quantity">
+            <button class="quantity-selector__btn" data-action="increase">+</button>
+          </div>
+        </div>
+        <div class="product-detail__buttons">
+          <button class="btn btn--primary btn--lg" id="pdAddToCart">Add to Cart</button>
+          <button class="btn btn--gold btn--lg" id="pdBuyNow">Buy Now</button>
+        </div>
+        <div style="margin-top: var(--space-md);">
+          <a href="https://wa.me/233000000000?text=Hi, I'm interested in ${encodeURIComponent(product.name)} (${Helpers.formatPrice(product.price)})" target="_blank" rel="noopener" class="btn btn--whatsapp btn--full">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Order via WhatsApp
+          </a>
+        </div>
+        <div class="product-detail__meta">
+          <div class="product-detail__meta-item">
+            <span class="product-detail__meta-label">Category</span>
+            <span class="product-detail__meta-value">${product.category}</span>
+          </div>
+          <div class="product-detail__meta-item">
+            <span class="product-detail__meta-label">Gender</span>
+            <span class="product-detail__meta-value" style="text-transform: capitalize;">${product.gender}</span>
+          </div>
+          <div class="product-detail__meta-item">
+            <span class="product-detail__meta-label">Delivery</span>
+            <span class="product-detail__meta-value">Delivery within Accra & across Ghana. Contact us for details.</span>
+          </div>
+        </div>
+      </div>
+    `;
+
+    // Thumbnail clicks
+    container.querySelectorAll('.product-detail__thumbnail').forEach(thumb => {
+      thumb.addEventListener('click', () => {
+        document.getElementById('mainProductImage').src = thumb.dataset.image;
+        container.querySelectorAll('.product-detail__thumbnail').forEach(t => t.classList.remove('active'));
+        thumb.classList.add('active');
+      });
+    });
+
+    // Size selection
+    container.querySelectorAll('.size-option').forEach(btn => {
+      btn.addEventListener('click', () => {
+        container.querySelectorAll('.size-option').forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+      });
+    });
+
+    // Quantity
+    const qtyInput = document.getElementById('pdQty');
+    container.querySelectorAll('.quantity-selector__btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        let val = parseInt(qtyInput.value);
+        if (btn.dataset.action === 'increase' && val < 10) qtyInput.value = val + 1;
+        else if (btn.dataset.action === 'decrease' && val > 1) qtyInput.value = val - 1;
+      });
+    });
+
+    // Add to cart
+    document.getElementById('pdAddToCart').addEventListener('click', () => {
+      const size = container.querySelector('.size-option.selected')?.dataset.size;
+      const qty = parseInt(qtyInput.value);
+      if (size) {
+        Cart.addItem(product.id, size, qty);
+      }
+    });
+
+    // Buy now
+    document.getElementById('pdBuyNow').addEventListener('click', () => {
+      const size = container.querySelector('.size-option.selected')?.dataset.size;
+      const qty = parseInt(qtyInput.value);
+      if (size) {
+        Cart.addItem(product.id, size, qty);
+        window.location.href = 'checkout.html';
+      }
+    });
+
+    // Update page title
+    document.title = `${product.name} — R&B Fashion`;
+  },
+
+  renderRelated(product) {
+    const container = document.getElementById('relatedProducts');
+    if (!container) return;
+
+    const related = PRODUCTS.filter(p =>
+      p.id !== product.id &&
+      (p.category === product.category || p.gender === product.gender)
+    ).slice(0, 4);
+
+    container.innerHTML = related.map(p => HomePage.createProductCard(p)).join('');
+    HomePage.bindProductEvents(container);
+  }
+};
+
+// js/pages/cart-page.js
+
+const CartPage = {
+  init() {
+    this.render();
+  },
+
+  render() {
+    const itemsContainer = document.getElementById('cartItems');
+    const summaryContainer = document.getElementById('cartSummary');
+    if (!itemsContainer) return;
+
+    if (Cart.items.length === 0) {
+      itemsContainer.innerHTML = `
+        <div class="cart-empty">
+          <div class="cart-empty__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          </div>
+          <h3 class="cart-empty__title">Your Cart is Empty</h3>
+          <p class="cart-empty__text">Discover something you love from our collection</p>
+          <a href="shop.html" class="btn btn--primary">Continue Shopping</a>
+        </div>
+      `;
+      if (summaryContainer) summaryContainer.style.display = 'none';
+      return;
+    }
+
+    if (summaryContainer) summaryContainer.style.display = 'block';
+
+    itemsContainer.innerHTML = Cart.items.map(item => `
+      <div class="cart-item" data-item-id="${item.id}">
+        <div class="cart-item__image">
+          <a href="product.html?id=${item.productId}">
+            <img src="${item.image}" alt="${item.name}" loading="lazy">
+          </a>
+        </div>
+        <div class="cart-item__details">
+          <h4 class="cart-item__name">
+            <a href="product.html?id=${item.productId}">${item.name}</a>
+          </h4>
+          <p class="cart-item__meta">Size: ${item.size} | ${item.category}</p>
+          <p class="cart-item__price">${Helpers.formatPrice(item.price * item.quantity)}</p>
+          <div class="cart-item__actions">
+            <div class="quantity-selector">
+              <button class="quantity-selector__btn" data-action="decrease" data-item="${item.id}">−</button>
+              <input type="number" class="quantity-selector__input" value="${item.quantity}" min="1" max="10" data-item="${item.id}" aria-label="Quantity">
+              <button class="quantity-selector__btn" data-action="increase" data-item="${item.id}">+</button>
+            </div>
+            <button class="cart-item__remove" data-remove="${item.id}">Remove</button>
+          </div>
+        </div>
+      </div>
+    `).join('');
+
+    // Summary
+    const subtotal = Cart.getSubtotal();
+    if (summaryContainer) {
+      summaryContainer.innerHTML = `
+        <h3 class="cart-summary__title">Order Summary</h3>
+        <div class="cart-summary__row">
+          <span>Subtotal (${Cart.getItemCount()} items)</span>
+          <span>${Helpers.formatPrice(subtotal)}</span>
+        </div>
+        <div class="cart-summary__row">
+          <span>Delivery</span>
+          <span style="color: var(--color-gray);">Calculated at checkout</span>
+        </div>
+        <div class="cart-summary__row cart-summary__row--total">
+          <span>Total</span>
+          <span>${Helpers.formatPrice(subtotal)}</span>
+        </div>
+        <div class="cart-summary__buttons">
+          <a href="checkout.html" class="btn btn--primary btn--full btn--lg">Proceed to Checkout</a>
+          <a href="shop.html" class="btn btn--secondary btn--full">Continue Shopping</a>
+        </div>
+      `;
+    }
+
+    this.bindEvents();
+  },
+
+  bindEvents() {
+    // Quantity buttons
+    document.querySelectorAll('.cart-item .quantity-selector__btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const itemId = btn.dataset.item;
+        const item = Cart.items.find(i => i.id === itemId);
+        if (!item) return;
+
+        if (btn.dataset.action === 'increase' && item.quantity < 10) {
+          Cart.updateQuantity(itemId, item.quantity + 1);
+        } else if (btn.dataset.action === 'decrease') {
+          Cart.updateQuantity(itemId, item.quantity - 1);
+        }
+        this.render();
+      });
+    });
+
+    // Remove buttons
+    document.querySelectorAll('[data-remove]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        Cart.removeItem(btn.dataset.remove);
+        this.render();
+        Toast.show('Item removed from cart', 'info');
+      });
+    });
+  }
+};
+
+// js/pages/checkout-page.js
+
+const CheckoutPage = {
+  init() {
+    this.renderOrderSummary();
+    this.bindEvents();
+  },
+
+  renderOrderSummary() {
+    const container = document.getElementById('checkoutSummary');
+    if (!container) return;
+
+    if (Cart.items.length === 0) {
+      window.location.href = 'cart.html';
+      return;
+    }
+
+    const subtotal = Cart.getSubtotal();
+    container.innerHTML = `
+      <h3 class="cart-summary__title">Order Summary</h3>
+      ${Cart.items.map(item => `
+        <div style="display: flex; gap: var(--space-sm); padding: var(--space-sm) 0; border-bottom: var(--border-thin); align-items: center;">
+          <div style="width: 50px; height: 65px; background: var(--color-off-white); flex-shrink: 0; overflow: hidden;">
+            <img src="${item.image}" alt="${item.name}" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div style="flex: 1; min-width: 0;">
+            <p style="font-size: var(--fs-sm); font-weight: var(--fw-semibold); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${item.name}</p>
+            <p style="font-size: var(--fs-xs); color: var(--color-gray);">Size: ${item.size} × ${item.quantity}</p>
+          </div>
+          <span style="font-weight: var(--fw-semibold); font-size: var(--fs-sm); flex-shrink: 0;">${Helpers.formatPrice(item.price * item.quantity)}</span>
+        </div>
+      `).join('')}
+      <div class="cart-summary__row" style="margin-top: var(--space-md);">
+        <span>Subtotal</span>
+        <span>${Helpers.formatPrice(subtotal)}</span>
+      </div>
+      <div class="cart-summary__row">
+        <span>Delivery</span>
+        <span style="color: var(--color-gray);">To be confirmed</span>
+      </div>
+      <div class="cart-summary__row cart-summary__row--total">
+        <span>Total</span>
+        <span>${Helpers.formatPrice(subtotal)}</span>
+      </div>
+    `;
+  },
+
+  bindEvents() {
+    const form = document.getElementById('checkoutForm');
+    if (!form) return;
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      if (!FormValidator.validate(form)) return;
+
+      // Collect form data
+      const formData = new FormData(form);
+      const orderData = {
+        orderNumber: Helpers.generateOrderNumber(),
+        customer: {
+          name: formData.get('fullName'),
+          phone: formData.get('phone'),
+          whatsapp: formData.get('whatsapp'),
+          email: formData.get('email'),
+          location: formData.get('location'),
+          instructions: formData.get('instructions')
+        },
+        items: Cart.items,
+        subtotal: Cart.getSubtotal(),
+        createdAt: new Date().toISOString()
+      };
+
+      // Save order data for success page
+      Storage.set('rb-last-order', orderData);
+      Cart.clear();
+
+      window.location.href = 'order-success.html';
+    });
+  }
+};
+
+// js/pages/contact-page.js
+
+const ContactPage = {
+  init() {
+    const form = document.getElementById('contactForm');
+    if (!form) return;
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      if (!FormValidator.validate(form)) return;
+
+      Toast.show('Thank you! Your message has been received. We\'ll get back to you soon.', 'success', 5000);
+      form.reset();
+    });
+  }
+};
+
+// js/app.js
+
+// Initialize the application
+document.addEventListener('DOMContentLoaded', () => {
+  // Core components
+  Toast.init();
+  Cart.init();
+  Wishlist.init();
+  Navigation.init();
+  QuickView.init();
+
+  // Detect current page and initialize page-specific JS
+  const page = document.body.dataset.page;
+
+  switch (page) {
+    case 'home':
+      HomePage.init();
+      break;
+    case 'shop':
+      ShopPage.init();
+      break;
+    case 'men':
+      ShopPage.init(PRODUCTS.filter(p => p.gender === 'men'));
+      break;
+    case 'women':
+      ShopPage.init(PRODUCTS.filter(p => p.gender === 'women'));
+      break;
+    case 'shoes':
+      ShopPage.init(PRODUCTS.filter(p => p.isShoe));
+      break;
+    case 'new-arrivals':
+      ShopPage.init(PRODUCTS.filter(p => p.isNew));
+      break;
+    case 'product':
+      ProductDetailPage.init();
+      break;
+    case 'cart':
+      CartPage.init();
+      break;
+    case 'checkout':
+      CheckoutPage.init();
+      break;
+    case 'contact':
+      ContactPage.init();
+      break;
+    case 'order-success':
+      OrderSuccessPage.init();
+      break;
+  }
+
+  // Scroll animations for all pages
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+  document.querySelectorAll('.animate-on-scroll').forEach(el => {
+    observer.observe(el);
+  });
+});
+
+// Order Success Page Logic (inline since it's small)
+const OrderSuccessPage = {
+  init() {
+    const order = Storage.get('rb-last-order');
+    if (!order) return;
+
+    const container = document.getElementById('orderSuccessContent');
+    if (!container) return;
+
+    container.innerHTML = `
+      <div class="order-success__icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h1 class="order-success__title">Order Confirmed</h1>
+      <p class="order-success__text">Thank you for shopping with R&B Fashion! Your order has been received and we'll be in touch shortly to confirm delivery details.</p>
+      <div class="order-success__order-number">${order.orderNumber}</div>
+      <div class="order-success__summary">
+        <h3 class="order-success__summary-title">Order Details</h3>
+        ${order.items.map(item => `
+          <div class="order-success__summary-row">
+            <span>${item.name} (${item.size}) × ${item.quantity}</span>
+            <span>${Helpers.formatPrice(item.price * item.quantity)}</span>
+          </div>
+        `).join('')}
+        <div class="order-success__summary-row" style="border-top: var(--border-thin); margin-top: var(--space-sm); padding-top: var(--space-sm); font-weight: var(--fw-bold);">
+          <span>Total</span>
+          <span>${Helpers.formatPrice(order.subtotal)}</span>
+        </div>
+      </div>
+      <div class="order-success__summary" style="margin-bottom: var(--space-2xl);">
+        <h3 class="order-success__summary-title">Delivery Information</h3>
+        <div class="order-success__summary-row"><span>Name:</span><span>${order.customer.name}</span></div>
+        <div class="order-success__summary-row"><span>Phone:</span><span>${order.customer.phone}</span></div>
+        <div class="order-success__summary-row"><span>Location:</span><span>${order.customer.location}</span></div>
+      </div>
+      <div class="order-success__buttons">
+        <a href="https://wa.me/233000000000?text=Hi, I just placed order ${order.orderNumber}" target="_blank" rel="noopener" class="btn btn--whatsapp btn--full btn--lg">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Contact Us on WhatsApp
+        </a>
+        <a href="index.html" class="btn btn--primary btn--full">Continue Shopping</a>
+      </div>
+    `;
+  }
+};
+

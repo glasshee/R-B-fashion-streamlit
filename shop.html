@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop | R&B Fashion</title>
+  <link rel="icon" type="image/png" href="assets/rb-logo.png" />
+  <style>
+    :root {
+      --black: #090909;
+      --gold: #d4af5f;
+      --gold-soft: #e7d39a;
+      --cream: #f7f2ea;
+      --white: #ffffff;
+      --text: #1d1d1d;
+      --muted: #666;
+      --line: rgba(0,0,0,0.08);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--cream);
+      color: var(--text);
+    }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+    button { font: inherit; }
+
+    .container {
+      width: min(1120px, calc(100% - 2rem));
+      margin: 0 auto;
+    }
+
+    .header {
+      background: #fff;
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+
+    .header__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 74px;
+      gap: 1rem;
+    }
+
+    .header__logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+      padding: 0;
+      line-height: 0;
+    }
+
+    .brand-logo {
+      display: block;
+      width: 56px;
+      height: 56px;
+      object-fit: contain;
+      background: #000;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 1.3rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .nav a {
+      position: relative;
+      padding-bottom: 0.2rem;
+      color: var(--text);
+    }
+
+    .nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.2s ease;
+    }
+
+    .nav a:hover::after,
+    .nav a.active::after {
+      transform: scaleX(1);
+    }
+
+    .header__actions {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .header__action-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0.7rem 1rem;
+      border: 1px solid rgba(0,0,0,0.12);
+      border-radius: 999px;
+      background: transparent;
+      font-weight: 700;
+      color: var(--black);
+      cursor: pointer;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      margin-left: 0.3rem;
+      border-radius: 50%;
+      background: var(--gold);
+      color: var(--black);
+      font-size: 0.72rem;
+    }
+
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 260px;
+      background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+        url("https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
+      color: var(--white);
+      text-align: center;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      letter-spacing: -0.05em;
+    }
+
+    .section {
+      padding: 4rem 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .eyebrow {
+      margin: 0;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.72rem;
+      font-weight: 700;
+    }
+
+    .section-head h2 {
+      margin: 0.4rem 0 0;
+      font-size: clamp(2rem, 3vw, 3rem);
+      letter-spacing: -0.05em;
+    }
+
+    .text-link {
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+
+    .product {
+      background: var(--white);
+      border: 1px solid rgba(0,0,0,0.05);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+    }
+
+    .product__image {
+      height: 330px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .p1 { background-image: url("https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=900&q=80"); }
+    .p2 { background-image: url("https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=80"); }
+    .p3 { background-image: url("https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=80"); }
+
+    .product__body {
+      padding: 1.1rem 1rem 1.3rem;
+    }
+
+    .product__tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .product__name {
+      margin: 0;
+      font-size: 1.25rem;
+    }
+
+    .product__price {
+      margin: 0.55rem 0 1rem;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .product__button {
+      width: 100%;
+      border: 0;
+      border-radius: 12px;
+      background: var(--black);
+      color: var(--white);
+      padding: 0.9rem 1rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .footer {
+      background: var(--black);
+      color: rgba(255,255,255,0.8);
+      padding: 2.5rem 0;
+      margin-top: 2rem;
+    }
+
+    .footer__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 820px) {
+      .nav { display: none; }
+      .product-grid { grid-template-columns: 1fr; }
+      .header__actions .header__action-btn:first-child { display: inline-flex; }
+      .brand-logo {
+        width: 48px;
+        height: 48px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <a class="header__logo" href="index.html" aria-label="R&B Fashion home">
+  <img src="assets/rb-logo.png" alt="R&B Fashion logo" class="brand-logo" />
+</a>
+
+      <nav class="nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="shop.html" class="active">Shop</a>
+        <a href="men.html">Men</a>
+        <a href="women.html">Women</a>
+        <a href="shoes.html">Shoes</a>
+        <a href="about.html">About</a>
+        <a href="forum.html">Style Forum</a>
+      </nav>
+
+      <div class="header__actions">
+        <button type="button" class="header__action-btn">Search</button>
+        <a href="#" class="header__action-btn">Bag <span class="badge">0</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>Shop</h1>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Sunyani street edit</p>
+            <h2>Trending now</h2>
+          </div>
+          <a href="index.html#new-arrivals" class="text-link">View all</a>
+        </div>
+
+        <div class="product-grid" data-catalog="all">
+          <article class="product">
+            <div class="product__image p1" role="img" aria-label="Baggy blue denim"></div>
+            <div class="product__body">
+              <span class="product__tag">Denim</span>
+              <h3 class="product__name">Baggy blue denim</h3>
+              <p class="product__price">GH₵ 320</p>
+              <button type="button" class="product__button">Add to bag</button>
+            </div>
+          </article>
+
+          <article class="product">
+            <div class="product__image p2" role="img" aria-label="Oversized graphic tee"></div>
+            <div class="product__body">
+              <span class="product__tag">Streetwear</span>
+              <h3 class="product__name">Oversized graphic tee</h3>
+              <p class="product__price">GH₵ 240</p>
+              <button type="button" class="product__button">Add to bag</button>
+            </div>
+          </article>
+
+          <article class="product">
+            <div class="product__image p3" role="img" aria-label="ASICS GEL street runners"></div>
+            <div class="product__body">
+              <span class="product__tag">Sneakers</span>
+              <h3 class="product__name">ASICS GEL street runners</h3>
+              <p class="product__price">GH₵ 720</p>
+              <button type="button" class="product__button">Add to bag</button>
+            </div>
+          </article>
+
+          <article class="product">
+            <div class="product__image p2" role="img" aria-label="Dr. Martens street boots"></div>
+            <div class="product__body">
+              <span class="product__tag">Boots</span>
+              <h3 class="product__name">Dr. Martens street boots</h3>
+              <p class="product__price">GH₵ 780</p>
+              <button type="button" class="product__button">Add to bag</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="formal-wear">
+      <div class="container">
+        <div class="section-head">
+          <div><p class="eyebrow">Dress with intention</p><h2>Formal wear</h2></div>
+        </div>
+        <div class="product-grid" data-catalog="formal">
+          <article class="product"><div class="product__image p1" role="img" aria-label="Tailored black suit"></div><div class="product__body"><span class="product__tag">Formal</span><h3 class="product__name">Tailored black suit</h3><p class="product__price">GH₵ 950</p><button type="button" class="product__button">Add to bag</button></div></article>
+          <article class="product"><div class="product__image p2" role="img" aria-label="Satin evening dress"></div><div class="product__body"><span class="product__tag">Formal</span><h3 class="product__name">Satin evening dress</h3><p class="product__price">GH₵ 820</p><button type="button" class="product__button">Add to bag</button></div></article>
+          <article class="product"><div class="product__image p3" role="img" aria-label="Clean cut formal shirt"></div><div class="product__body"><span class="product__tag">Formal</span><h3 class="product__name">Clean cut formal shirt</h3><p class="product__price">GH₵ 360</p><button type="button" class="product__button">Add to bag</button></div></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>
+        <strong>R&B Fashion</strong>
+      </div>
+      <div>
+        Sunyani, Ghana
+      </div>
+    </div>
+  </footer>
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

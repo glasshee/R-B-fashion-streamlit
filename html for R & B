@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="R&B Fashion — Trendy, premium, and accessible fashion for students and young professionals in Ghana." />
+  <title>R&B Fashion — Trendy. Premium. Accessible.</title>
+
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body data-page="home">
+  <div class="announcement-bar">
+    <div class="announcement-bar__inner">
+      <p class="announcement-bar__text">
+        Free delivery in Sunyani Campus on orders over <span class="gold">GH₵ 500</span> — New drops every week
+      </p>
+    </div>
+    <button class="announcement-bar__close" type="button" aria-label="Close announcement">&times;</button>
+  </div>
+
+  <header class="header">
+    <div class="container">
+      <div class="header__inner">
+        <div class="header__logo">
+          <a href="index.html" class="header__logo-link">
+            <svg class="header__logo-icon" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">
+              <rect width="44" height="44" fill="#000000"></rect>
+              <text x="50%" y="52%" dominant-baseline="central" text-anchor="middle" fill="#c9a84c" font-family="'Playfair Display', serif" font-size="16" font-weight="700">R&B</text>
+            </svg>
+            <div>
+              <span class="header__logo-text">R<span>&</span>B</span>
+              <span class="header__logo-tagline">Fashion</span>
+            </div>
+          </a>
+        </div>
+
+        <nav class="nav-desktop" aria-label="Main navigation">
+          <ul class="nav-desktop__list">
+            <li><a href="index.html" class="nav-desktop__link active">Home</a></li>
+            <li><a href="shop.html" class="nav-desktop__link">Shop</a></li>
+            <li><a href="men.html" class="nav-desktop__link">Men</a></li>
+            <li><a href="women.html" class="nav-desktop__link">Women</a></li>
+            <li><a href="shoes.html" class="nav-desktop__link">Shoes</a></li>
+            <li><a href="#new-arrivals" class="nav-desktop__link">New arrivals</a></li>
+          </ul>
+        </nav>
+
+        <div class="header__actions">
+          <button class="header__action-btn" type="button" aria-label="Search">Search</button>
+          <a class="header__action-btn" href="#cart" aria-label="Shopping bag">
+            Bag <span class="header__badge">0</span>
+          </a>
+
+          <button class="header__menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="nav-overlay" aria-hidden="true"></div>
+
+  <nav class="nav-mobile" aria-label="Mobile navigation">
+    <div class="nav-mobile__header">
+      <button class="nav-mobile__close" type="button" aria-label="Close menu">&times;</button>
+    </div>
+
+    <ul class="nav-mobile__list">
+      <li><a href="index.html" class="nav-mobile__link active">Home</a></li>
+      <li><a href="shop.html" class="nav-mobile__link">Shop</a></li>
+      <li><a href="men.html" class="nav-mobile__link">Men</a></li>
+      <li><a href="women.html" class="nav-mobile__link">Women</a></li>
+      <li><a href="shoes.html" class="nav-mobile__link">Shoes</a></li>
+      <li><a href="#new-arrivals" class="nav-mobile__link">New arrivals</a></li>
+    </ul>
+
+    <div class="nav-mobile__footer">
+      <div class="nav-mobile__social">
+        <a href="#" aria-label="Instagram">Instagram</a>
+        <a href="#" aria-label="Facebook">Facebook</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero__content">
+        <p class="eyebrow">R&amp;B / Accra</p>
+        <h1 id="hero-title">Your everyday, elevated.</h1>
+        <p class="hero__copy">
+          Curated fashion with Ghanaian energy. Premium pieces, easy prices, and delivery across Ghana.
+        </p>
+        <div class="hero__ctas">
+          <a class="btn btn--gold" href="#new-arrivals">Shop new arrivals</a>
+          <a class="btn btn--secondary" href="shop.html">Explore shop</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="new-arrivals" aria-labelledby="arrivals-title">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <p class="section-header__label">Fresh this week</p>
+            <h2 class="section-header__title" id="arrivals-title">New arrivals</h2>
+          </div>
+          <a class="text-link" href="shop.html">View all</a>
+        </div>
+
+        <div class="product-grid">
+          <article class="product-card">
+            <div class="product-card__image product-card__image--shirt" role="img" aria-label="Black relaxed shirt"></div>
+            <div class="product-card__info">
+              <span class="product-card__category">Men</span>
+              <h3 class="product-card__name">Relaxed black shirt</h3>
+              <p class="product-card__price">GH₵ 280</p>
+              <button class="product-card__quick-add add-to-cart" type="button" data-product="Relaxed black shirt">Add to bag</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-card__image product-card__image--dress" role="img" aria-label="Gold slip dress"></div>
+            <div class="product-card__info">
+              <span class="product-card__category">Women</span>
+              <h3 class="product-card__name">Gold slip dress</h3>
+              <p class="product-card__price">GH₵ 420</p>
+              <button class="product-card__quick-add add-to-cart" type="button" data-product="Gold slip dress">Add to bag</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-card__image product-card__image--sneaker" role="img" aria-label="White and green sneakers"></div>
+            <div class="product-card__info">
+              <span class="product-card__category">Shoes</span>
+              <h3 class="product-card__name">City runner sneakers</h3>
+              <p class="product-card__price">GH₵ 560</p>
+              <button class="product-card__quick-add add-to-cart" type="button" data-product="City runner sneakers">Add to bag</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="feature-band" aria-label="R&B benefits">
+      <div class="container feature-band__grid">
+        <div>
+          <strong>Made for your rhythm</strong>
+          <span>Looks that move from campus to night out.</span>
+        </div>
+        <div>
+          <strong>Easy delivery</strong>
+          <span>Fast Accra delivery and nationwide shipping.</span>
+        </div>
+        <div>
+          <strong>Real value</strong>
+          <span>Premium style without the premium markup.</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="cart">
+    <div class="container footer__inner">
+      <div>
+        <span class="footer__logo">R&amp;B</span>
+        <p>Trendy. Premium. Accessible.</p>
+      </div>
+
+      <div>
+        <p>Accra, Ghana</p>
+        <p><a href="mailto:brownkwame123@gmail.com">brownkwame123@gmail.com</a></p>
+      </div>
+
+      <p>&copy; 2026 R&amp;B Fashion</p>
+    </div>
+  </footer>
+
+  <div class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
