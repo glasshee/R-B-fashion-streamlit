@@ -11,5 +11,4 @@ backend/.test_runtime/
 # Local deployment configuration
 .env
 .env.*
-!.env.example
 /.streamlit/secrets.toml

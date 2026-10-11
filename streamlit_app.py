@@ -277,7 +277,7 @@ def _show_cart() -> None:
         quantity = middle.number_input(
             "Quantity",
             min_value=1,
-            max_value=max(1, int(item["stock"])),
+            max_value=max(1, int(item["quantity"]), int(item["stock"])),
             value=int(item["quantity"]),
             key=f"quantity-{item['product_id']}",
         )
@@ -293,8 +293,12 @@ def _show_cart() -> None:
             else:
                 st.rerun()
         if right.button("Remove", key=f"remove-{item['product_id']}"):
-            _invoke_api("DELETE", f"/api/cart/items/{item['product_id']}")
-            st.rerun()
+            try:
+                _invoke_api("DELETE", f"/api/cart/items/{item['product_id']}")
+            except StoreError as error:
+                st.error(str(error))
+            else:
+                st.rerun()
     st.metric("Bag total", _money(cart["total"]))
 
     with st.form("checkout-form"):
@@ -332,8 +336,12 @@ def _show_wishlist() -> None:
         left, right = st.columns([5, 1])
         left.write(f"**{product['name']}** — {_money(product['price'])}")
         if right.button("Remove", key=f"unwish-{product['id']}"):
-            _invoke_api("DELETE", f"/api/wishlist/{product['id']}")
-            st.rerun()
+            try:
+                _invoke_api("DELETE", f"/api/wishlist/{product['id']}")
+            except StoreError as error:
+                st.error(str(error))
+            else:
+                st.rerun()
 
 
 def _show_orders() -> None:
@@ -484,8 +492,12 @@ def _show_admin() -> None:
             if product["active"] and st.button(
                 f"Archive {product['name']}", key=f"archive-{product['id']}"
             ):
-                _invoke_api("DELETE", f"/api/admin/products/{product['id']}")
-                st.rerun()
+                try:
+                    _invoke_api("DELETE", f"/api/admin/products/{product['id']}")
+                except StoreError as error:
+                    st.error(str(error))
+                else:
+                    st.rerun()
 
     with orders_tab:
         orders = _invoke_api("GET", "/api/admin/orders").get("orders", [])
@@ -506,13 +518,17 @@ def _show_admin() -> None:
                     key=f"order-status-{order['id']}",
                 )
                 if st.button("Update order", key=f"update-order-{order['id']}"):
-                    _invoke_api(
-                        "PUT",
-                        f"/api/admin/orders/{order['id']}/status",
-                        {"status": status},
-                    )
-                    st.success("Order status updated.")
-                    st.rerun()
+                    try:
+                        _invoke_api(
+                            "PUT",
+                            f"/api/admin/orders/{order['id']}/status",
+                            {"status": status},
+                        )
+                    except StoreError as error:
+                        st.error(str(error))
+                    else:
+                        st.success("Order status updated.")
+                        st.rerun()
 
     with summary_tab:
         summary = _invoke_api("GET", "/api/analytics/summary")

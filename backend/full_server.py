@@ -136,7 +136,8 @@ def verify_password(value: str, saved: str) -> bool:
 
 
 def initialize_db() -> None:
-    UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
+    if os.environ.get("RB_UPLOADS_AS_DATA_URI") != "1":
+        UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
     with connect_db() as db:
         schema = """
             CREATE TABLE IF NOT EXISTS users (
